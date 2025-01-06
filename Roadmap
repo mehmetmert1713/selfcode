@@ -1,0 +1,17 @@
+A. Hazırlık Aşaması
+   ├── Dokümantasyon Yapısı
+   ├── GitHub/Drive Organizasyonu
+   ├── Modül Planlaması
+   └── Geliştirme Stratejisi
+
+B. Geliştirme Süreci
+   ├── Core Sistem Geliştirmesi
+   ├── Modül Geliştirmeleri
+   ├── Test Süreçleri
+   └── Entegrasyon
+
+C. Kalite Kontrol
+   ├── Code Review Süreci
+   ├── Test Senaryoları
+   ├── Performans Testleri
+   └── Güvenlik Kontrolleri
