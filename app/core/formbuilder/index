@@ -1,0 +1,61 @@
+app/Core/FormBuilder/
+├── Builder/
+│   ├── FormBuilder.php
+│   │   Amaç: Form oluşturma sistemi
+│   │   İçerik:
+│   │   ```php
+│   │   class FormBuilder
+│   │   {
+│   │       // Form başlatma
+│   │       public function create(string $name, array $options = []): Form
+│   │       {
+│   │           // Form nesnesi oluşturma
+│   │           // Yapılandırma
+│   │           // Güvenlik ayarları
+│   │       }
+│   │
+│   │       // Alan ekleme
+│   │       public function addField(string $type, string $name, array $options = []): self
+│   │       {
+│   │           // Alan oluşturma
+│   │           // Validasyon kuralları
+│   │           // Alan özellikleri
+│   │       }
+│   │   }
+│   │   ```
+│   │
+│   └── FieldBuilder.php
+│       Amaç: Form alanı oluşturucu
+│       Özellikler:
+│       - Alan tipleri
+│       - Özel alanlar
+│       - Alan grupları
+
+├── Fields/
+│   ├── Types/
+│   │   ├── TextField.php
+│   │   ├── SelectField.php
+│   │   ├── FileField.php
+│   │   └── CustomField.php
+│   │
+│   └── Validation/
+│       ├── Validator.php
+│       └── Rules/
+│           ├── Required.php
+│           ├── Email.php
+│           └── Custom.php
+
+└── Handlers/
+    ├── FormHandler.php
+    │   Amaç: Form işleme
+    │   Özellikler:
+    │   - Veri doğrulama
+    │   - Veri temizleme
+    │   - Form işleme
+    │
+    └── FormResponse.php
+        Amaç: Form yanıtları
+        Özellikler:
+        - Başarı/hata mesajları
+        - Yönlendirme
+        - AJAX yanıtları
