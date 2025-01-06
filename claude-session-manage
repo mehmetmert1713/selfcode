@@ -1,0 +1,19 @@
+1. AI İle Geliştirme Süreci
+A. Claude Oturum Yönetimi
+
+
+Session Structure/
+├── Initial Setup/
+│   ├── Context Briefing          # Projenin mevcut durumu
+│   ├── Goal Definition          # Oturum hedefleri
+│   └── Resource References      # Kod ve doküman referansları
+│
+├── Development Cycle/
+│   ├── Task Breakdown           # Görev parçalama
+│   ├── Code Generation          # Kod üretimi
+│   └── Review & Refinement      # İnceleme ve iyileştirme
+│
+└── Session Closure/
+    ├── Progress Summary         # İlerleme özeti
+    ├── Checkpoint Creation      # Kontrol noktası
+    └── Next Steps              # Sonraki adımlar
