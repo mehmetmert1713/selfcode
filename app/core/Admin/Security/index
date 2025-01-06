@@ -1,0 +1,94 @@
+app/Core/Admin/Security/
+├── Authentication/
+│   ├── AdminAuthManager.php
+│   │   Amaç: Admin kimlik doğrulama yönetimi
+│   │   İçerik:
+│   │   ```php
+│   │   class AdminAuthManager
+│   │   {
+│   │       // Admin girişi
+│   │       public function authenticate(array $credentials): bool
+│   │       {
+│   │           // Kimlik kontrolü
+│   │           // 2FA kontrolü
+│   │           // Session başlatma
+│   │           // Log kaydı
+│   │       }
+│   │
+│   │       // Güvenlik kontrolü
+│   │       public function verifySecurityLevel(): bool
+│   │       {
+│   │           // IP kontrolü
+│   │           // Oturum kontrolü
+│   │           // Yetki kontrolü
+│   │           // Güvenli bağlantı kontrolü
+│   │       }
+│   │   }
+│   │   ```
+│   │
+│   └── TwoFactorAuth/
+│       ├── TwoFactorManager.php
+│       ├── Providers/
+│       │   ├── GoogleAuthenticator.php
+│       │   ├── EmailVerification.php
+│       │   └── SMSVerification.php
+│       │
+│       └── Recovery/
+│           ├── RecoveryCodeManager.php
+│           └── BackupCodesGenerator.php
+
+├── Authorization/
+│   ├── AdminPermissionManager.php
+│   │   Amaç: Admin yetkilendirme yönetimi
+│   │   İçerik:
+│   │   ```php
+│   │   class AdminPermissionManager
+│   │   {
+│   │       // Yetki kontrolü
+│   │       public function checkPermission(string $permission): bool
+│   │       {
+│   │           // Rol kontrolü
+│   │           // İzin kontrolü
+│   │           // Özel kurallar
+│   │       }
+│   │
+│   │       // Dinamik yetkilendirme
+│   │       public function registerPermission(string $key, array $rules): void
+│   │       {
+│   │           // Yetki kaydı
+│   │           // Kural tanımlama
+│   │       }
+│   │   }
+│   │   ```
+│   │
+│   └── RoleManager.php
+│       Amaç: Admin rol yönetimi
+│       Özellikler:
+│       - Rol tanımlama
+│       - Yetki atama
+│       - Rol hiyerarşisi
+
+├── Firewall/
+│   ├── AdminFirewall.php
+│   │   Amaç: Admin panel güvenlik duvarı
+│   │   Özellikler:
+│   │   - IP filtreleme
+│   │   - Brute force koruması
+│   │   - Rate limiting
+│   │
+│   └── Rules/
+│       ├── IPRule.php
+│       ├── RequestRule.php
+│       └── BehaviorRule.php
+
+└── Logging/
+    ├── AdminLogger.php
+    │   Amaç: Admin işlem logları
+    │   Özellikler:
+    │   - Aktivite logları
+    │   - Güvenlik logları
+    │   - Hata logları
+    │
+    └── Monitors/
+        ├── ActivityMonitor.php
+        └── SecurityMonitor.php
