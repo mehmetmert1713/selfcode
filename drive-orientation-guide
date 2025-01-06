@@ -1,0 +1,48 @@
+CMS Project/
+├── 01 - Project Management/
+│   ├── Planning/
+│   │   ├── Project Timeline.xlsx
+│   │   ├── Resource Allocation.xlsx
+│   │   └── Risk Management.xlsx
+│   │
+│   ├── Meetings/
+│   │   ├── Meeting Notes/
+│   │   └── Action Items/
+│   │
+│   └── Reports/
+│       ├── Progress Reports/
+│       └── Status Updates/
+│
+├── 02 - Development/
+│   ├── Current Sprint/
+│   │   ├── Tasks/
+│   │   ├── Code Reviews/
+│   │   └── Testing Results/
+│   │
+│   ├── AI Development/
+│   │   ├── Claude Sessions/
+│   │   ├── Prompts Library/
+│   │   └── Code Outputs/
+│   │
+│   └── Documentation/
+│       ├── Technical Specs/
+│       └── API Documentation/
+│
+├── 03 - Resources/
+│   ├── Design Assets/
+│   │   ├── Mockups/
+│   │   ├── UI Components/
+│   │   └── Icons/
+│   │
+│   ├── References/
+│   │   ├── Research Papers/
+│   │   └── Tech Articles/
+│   │
+│   └── Templates/
+│       ├── Document Templates/
+│       └── Code Templates/
+│
+└── 04 - Backups/
+    ├── Code Snapshots/
+    ├── Database Backups/
+    └── Configuration Backups/
