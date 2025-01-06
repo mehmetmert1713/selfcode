@@ -1,0 +1,35 @@
+app/Core/Bootstrap/
+├── AppKernel.php
+│   Amaç: Sistem başlatma ve temel konfigürasyon
+│   İçerik:
+│   - Sistem başlatma metodları
+│   - Servis container yapılandırması
+│   - Temel ayarların yüklenmesi
+│   Kullanım:
+│   ```php
+│   class AppKernel extends Kernel
+│   {
+│       public function boot()
+│       {
+│           $this->registerCoreServices();
+│           $this->loadConfiguration();
+│           $this->bootModules();
+│       }
+│   }
+│   ```
+│
+├── ServiceLoader.php
+│   Amaç: Servis yükleme ve kayıt
+│   İçerik:
+│   - Servis kaydı metodları
+│   - Servis container entegrasyonu
+│   Bağımlılıklar:
+│   - ServiceContainer
+│   - CoreConfig
+│
+└── ModuleKernel.php
+    Amaç: Modül sistemi başlatma
+    İçerik:
+    - Modül yükleme mantığı
+    - Modül yaşam döngüsü
+    - Modül bağımlılık yönetimi
