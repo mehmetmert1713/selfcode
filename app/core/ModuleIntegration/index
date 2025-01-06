@@ -1,0 +1,162 @@
+app/Core/ModuleIntegration/
+├── Services/
+│   ├── ModuleLoaderService.php
+│   │   Amaç: Modül yükleme servisi
+│   │   İçerik:
+│   │   ```php
+│   │   class ModuleLoaderService
+│   │   {
+│   │       // Modül yükleme
+│   │       public function loadModule(string $moduleName): void
+│   │       {
+│   │           // Modül dosyalarını kontrol et
+│   │           $this->validateModule($moduleName);
+│   │           
+│   │           // Bağımlılıkları yükle
+│   │           $this->loadDependencies($moduleName);
+│   │           
+│   │           // Modülü başlat
+│   │           $this->bootstrapModule($moduleName);
+│   │       }
+│   │
+│   │       // API entegrasyonu
+│   │       public function registerAPI(string $moduleName): void
+│   │       {
+│   │           // API rotalarını kaydet
+│   │           // Endpoint'leri yapılandır
+│   │           // Dokümentasyonu oluştur
+│   │       }
+│   │   }
+│   │   ```
+│   │
+│   └── ModuleAPIService.php
+│       Amaç: Modül API servisi
+│       Özellikler:
+│       - API yönetimi
+│       - Endpoint yapılandırma
+│       - Versiyon kontrolü
+
+├── Handlers/
+│   ├── DatabaseHandler.php
+│   │   Amaç: Veritabanı işlemleri
+│   │   Özellikler:
+│   │   - Migration yönetimi
+│   │   - Seed işlemleri
+│   │   - Veri dönüşümü
+│   │
+│   ├── AssetHandler.php
+│   │   Amaç: Asset yönetimi
+│   │   Özellikler:
+│   │   - Asset yükleme
+│   │   - Optimizasyon
+│   │   - Versiyon kontrolü
+│   │
+│   └── ConfigHandler.php
+│       Amaç: Yapılandırma yönetimi
+│       Özellikler:
+│       - Config yükleme
+│       - Merge işlemleri
+│       - Validasyon
+
+└── Events/
+    ├── ModuleEvents.php
+    │   Amaç: Modül olayları
+    │   İçerik:
+    │   ```php
+    │   class ModuleEvents
+    │   {
+    │       // Modül yükleme olayı
+    │       public function onModuleLoaded(string $moduleName): void
+    │       {
+    │           // Yükleme sonrası işlemler
+    │           // Event tetikleme
+    │           // Cache temizleme
+    │       }
+│
+    │       // Modül kaldırma olayı
+    │       public function onModuleUnloaded(string $moduleName): void
+    │       {
+    │           // Temizlik işlemleri
+    │           // Bağımlılık kontrolü
+    │           // Log kaydı
+    │       }
+    │   }
+    │   ```
+    │
+    └── Listeners/
+        ├── ModuleEventListener.php
+        └── APIEventListener.php
+
+## 1.25 API Sistem Yapısı
+
+### API/
+```php
+app/Core/API/
+├── Routes/
+│   ├── ApiRouteManager.php
+│   │   Amaç: API rota yönetimi
+│   │   İçerik:
+│   │   ```php
+│   │   class ApiRouteManager
+│   │   {
+│   │       // Rota kayıt
+│   │       public function registerRoutes(string $module): void
+│   │       {
+│   │           // Modül rotalarını yükle
+│   │           // Middleware ekle
+│   │           // Versiyon kontrolü
+│   │       }
+│   │
+│   │       // Endpoint yapılandırma
+│   │       public function configureEndpoint(string $path, array $options): void
+│   │       {
+│   │           // Rate limit ayarları
+│   │           // Cache ayarları
+│   │           // Yetkilendirme
+│   │       }
+│   │   }
+│   │   ```
+│   │
+│   └── ApiVersionManager.php
+│       Amaç: API versiyon yönetimi
+│       Özellikler:
+│       - Versiyon kontrolü
+│       - Geriye uyumluluk
+│       - Yönlendirme
+
+├── Middleware/
+│   ├── ApiAuthentication.php
+│   │   Amaç: API kimlik doğrulama
+│   │   Özellikler:
+│   │   - Token kontrolü
+│   │   - API key doğrulama
+│   │   - OAuth entegrasyonu
+│   │
+│   ├── RateLimiter.php
+│   │   Amaç: İstek sınırlama
+│   │   Özellikler:
+│   │   - Limit kontrolü
+│   │   - Kota yönetimi
+│   │   - Throttling
+│   │
+│   └── ApiResponseFormatter.php
+│       Amaç: Yanıt formatlama
+│       Özellikler:
+│       - JSON dönüşüm
+│       - Hata formatları
+│       - Meta data
+
+└── Documentation/
+    ├── SwaggerGenerator.php
+    │   Amaç: API dokümantasyonu
+    │   Özellikler:
+    │   - OpenAPI spec
+    │   - Endpoint listesi
+    │   - Örnek kullanımlar
+    │
+    └── ApiVersionDoc.php
+        Amaç: Versiyon dokümantasyonu
+        Özellikler:
+        - Değişiklik notları
+        - Geriye uyumluluk
+        - Örnekler
