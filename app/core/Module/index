@@ -1,0 +1,113 @@
+app/Core/Module/
+├── Base/
+│   ├── BaseModule.php
+│   │   Amaç: Temel modül sınıfı
+│   │   İçerik:
+│   │   ```php
+│   │   abstract class BaseModule
+│   │   {
+│   │       protected ModuleConfig $config;
+│   │       protected ModuleLoader $loader;
+│   │
+│   │       // Modül başlatma
+│   │       public function boot(): void
+│   │       {
+│   │           $this->registerServices();
+│   │           $this->loadRoutes();
+│   │           $this->loadViews();
+│   │           $this->loadMigrations();
+│   │       }
+│   │
+│   │       // Modül kurulumu
+│   │       public function install(): void
+│   │       {
+│   │           // Veritabanı kurulumu
+│   │           // Asset kopyalama
+│   │           // Konfigürasyon ayarları
+│   │       }
+│   │
+│   │       // Modül kaldırma
+│   │       public function uninstall(): void
+│   │       {
+│   │           // Temizlik işlemleri
+│   │           // Veritabanı temizliği
+│   │           // Asset temizliği
+│   │       }
+│   │   }
+│   │   ```
+│   │
+│   └── ModuleInterface.php
+│       Amaç: Modül kontratı
+│       Metodlar:
+│       - boot()
+│       - register()
+│       - install()
+│       - uninstall()
+
+├── Managers/
+│   ├── ModuleManager.php
+│   │   Amaç: Modül yönetim sistemi
+│   │   İçerik:
+│   │   ```php
+│   │   class ModuleManager
+│   │   {
+│   │       // Modül yükleme
+│   │       public function load(string $moduleName): void
+│   │       {
+│   │           // Modül kontrolü
+│   │           // Bağımlılık kontrolü
+│   │           // Yükleme işlemi
+│   │       }
+│   │
+│   │       // Modül etkinleştirme
+│   │       public function enable(string $moduleName): void
+│   │       {
+│   │           // Etkinleştirme mantığı
+│   │           // Event tetikleme
+│   │       }
+│   │
+│   │       // Modül devre dışı bırakma
+│   │       public function disable(string $moduleName): void
+│   │       {
+│   │           // Devre dışı bırakma
+│   │           // Temizlik işlemleri
+│   │       }
+│   │   }
+│   │   ```
+│   │
+│   └── DependencyManager.php
+│       Amaç: Modül bağımlılık yönetimi
+│       Özellikler:
+│       - Bağımlılık kontrolü
+│       - Versiyon kontrolü
+│       - Çakışma kontrolü
+
+├── Registry/
+│   ├── ModuleRegistry.php
+│   │   Amaç: Modül kayıt sistemi
+│   │   Özellikler:
+│   │   - Modül listesi
+│   │   - Durum takibi
+│   │   - Meta veri yönetimi
+│   │
+│   └── HookRegistry.php
+│       Amaç: Hook kayıt sistemi
+│       Özellikler:
+│       - Hook noktaları
+│       - Event yönetimi
+│       - Filter sistemi
+
+└── Services/
+    ├── ActivationService.php
+    │   Amaç: Modül aktivasyon servisi
+    │   Özellikler:
+    │   - Kurulum kontrolü
+    │   - Lisans kontrolü
+    │   - Güncelleme kontrolü
+    │
+    └── UpdateService.php
+        Amaç: Modül güncelleme servisi
+        Özellikler:
+        - Versiyon kontrolü
+        - Otomatik güncelleme
+        - Yedekleme sistemi
