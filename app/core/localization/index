@@ -1,0 +1,62 @@
+app/Core/Localization/
+├── Managers/
+│   ├── LocaleManager.php
+│   │   Amaç: Dil yönetim sistemi
+│   │   İçerik:
+│   │   ```php
+│   │   class LocaleManager
+│   │   {
+│   │       // Dil değiştirme
+│   │       public function setLocale(string $locale): void
+│   │       {
+│   │           // Dil kontrolü
+│   │           // Session güncelleme
+│   │           // Yönlendirme
+│   │       }
+│   │
+│   │       // Çeviri yönetimi
+│   │       public function translate(string $key, array $params = []): string
+│   │       {
+│   │           // Çeviri arama
+│   │           // Parametre değiştirme
+│   │           // Fallback yönetimi
+│   │       }
+│   │   }
+│   │   ```
+│   │
+│   └── TranslationManager.php
+│       Amaç: Çeviri yönetimi
+│       Özellikler:
+│       - Çeviri importu
+│       - Eksik çeviri tespiti
+│       - Otomatik çeviri
+
+├── Middleware/
+│   ├── LocaleMiddleware.php
+│   │   Amaç: Dil yönlendirme
+│   │   Özellikler:
+│   │   - URL bazlı dil seçimi
+│   │   - Tarayıcı dil tespiti
+│   │   - Oturum yönetimi
+│   │
+│   └── TranslationMiddleware.php
+│       Amaç: Çeviri ara yazılımı
+│       Özellikler:
+│       - Dinamik çeviri
+│       - Cache yönetimi
+│       - Fallback mekanizması
+
+└── Services/
+    ├── LocaleService.php
+    │   Amaç: Dil servisi
+    │   Özellikler:
+    │   - Dil listesi yönetimi
+    │   - Varsayılan dil ayarları
+    │   - Dil değiştirme mantığı
+    │
+    └── TranslationService.php
+        Amaç: Çeviri servisi
+        Özellikler:
+        - Çeviri dosyaları yönetimi
+        - Çeviri önbelleği
+        - API entegrasyonu
