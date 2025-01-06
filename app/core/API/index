@@ -1,0 +1,66 @@
+app/Core/API/
+├── Controllers/
+│   ├── ApiController.php
+│   │   Amaç: Temel API kontrolcüsü
+│   │   İçerik:
+│   │   ```php
+│   │   class ApiController
+│   │   {
+│   │       // API yanıt oluşturma
+│   │       protected function respond($data, $status = 200): JsonResponse
+│   │       {
+│   │           return response()->json([
+│   │               'data' => $data,
+│   │               'meta' => $this->getMeta()
+│   │           ], $status);
+│   │       }
+│   │
+│   │       // Hata yanıtı
+│   │       protected function error($message, $status = 400): JsonResponse
+│   │       {
+│   │           return response()->json([
+│   │               'error' => $message,
+│   │               'code' => $status
+│   │           ], $status);
+│   │       }
+│   │   }
+│   │   ```
+│   │
+│   └── ResourceController.php
+│       Amaç: Kaynak tabanlı API kontrolcüsü
+│       Metodlar:
+│       - index()
+│       - show()
+│       - store()
+│       - update()
+│       - destroy()
+
+├── Middleware/
+│   ├── ApiAuthentication.php
+│   │   Amaç: API kimlik doğrulama
+│   │   Özellikler:
+│   │   - Token doğrulama
+│   │   - API key kontrolü
+│   │   - Rate limiting
+│   │
+│   └── ApiVersion.php
+│       Amaç: API versiyon yönetimi
+│       Özellikler:
+│       - Versiyon kontrolü
+│       - Geriye uyumluluk
+│       - Versiyon yönlendirme
+
+└── Documentation/
+    ├── ApiDocGenerator.php
+    │   Amaç: API dokümantasyonu oluşturma
+    │   Özellikler:
+    │   - Swagger/OpenAPI
+    │   - Endpoint listesi
+    │   - Örnek kullanımlar
+    │
+    └── ApiSpecification.php
+        Amaç: API spesifikasyonu
+        Özellikler:
+        - Endpoint tanımları
+        - Veri modelleri
+        - Güvenlik şemaları
