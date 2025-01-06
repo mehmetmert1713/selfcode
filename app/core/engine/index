@@ -1,0 +1,116 @@
+app/Core/Engine/
+├── ModuleEngine/
+│   ├── ModuleManager.php
+│   │   Amaç: Modül yönetim sistemi
+│   │   İçerik:
+│   │   ```php
+│   │   class ModuleManager
+│   │   {
+│   │       // Modül yükleme
+│   │       public function loadModule(string $moduleName): void
+│   │       {
+│   │           // Modül kontrolü
+│   │           // Bağımlılık kontrolü
+│   │           // Modül başlatma
+│   │       }
+│   │
+│   │       // Modül kaldırma
+│   │       public function unloadModule(string $moduleName): void
+│   │       {
+│   │           // Kaynakları temizle
+│   │           // Veritabanı temizliği
+│   │           // Dosya temizliği
+│   │       }
+│   │   }
+│   │   ```
+│   │
+│   ├── ModuleLoader.php
+│   │   Amaç: Modül dosyalarını yükleme
+│   │   Metodlar:
+│   │   - loadModuleFiles()
+│   │   - registerRoutes()
+│   │   - registerViews()
+│   │
+│   └── ModuleRegistry.php
+│       Amaç: Modül kaydı ve yönetimi
+│       Özellikler:
+│       - Aktif modül listesi
+│       - Modül meta verileri
+│       - Modül durumları
+
+├── ThemeEngine/
+│   ├── ThemeManager.php
+│   │   Amaç: Tema yönetim sistemi
+│   │   İçerik:
+│   │   ```php
+│   │   class ThemeManager
+│   │   {
+│   │       // Tema yükleme
+│   │       public function activateTheme(string $themeName): void
+│   │       {
+│   │           // Tema doğrulama
+│   │           // Asset yükleme
+│   │           // Önbellek temizleme
+│   │       }
+│   │
+│   │       // Tema konfigürasyonu
+│   │       public function configureTheme(array $config): void
+│   │       {
+│   │           // Tema ayarları
+│   │           // Özelleştirmeler
+│   │       }
+│   │   }
+│   │   ```
+│   │
+│   ├── ThemeCompiler.php
+│   │   Amaç: Tema dosyalarını derleme
+│   │   Özellikler:
+│   │   - SCSS/LESS derleme
+│   │   - JavaScript birleştirme
+│   │   - Asset optimizasyonu
+│   │
+│   └── AssetManager.php
+│       Amaç: Tema varlıklarını yönetme
+│       Metodlar:
+│       - registerAsset()
+│       - compileAssets()
+│       - optimizeAssets()
+
+└── PluginEngine/
+    ├── PluginManager.php
+    │   Amaç: Eklenti yönetim sistemi
+    │   İçerik:
+    │   ```php
+    │   class PluginManager
+    │   {
+    │       // Eklenti yükleme
+    │       public function installPlugin(string $pluginName): void
+    │       {
+    │           // Eklenti kontrolü
+    │           // Kurulum işlemleri
+    │           // Hook kayıtları
+    │       }
+    │
+    │       // Hook yönetimi
+    │       public function registerHook(string $hookName, callable $callback): void
+    │       {
+    │           // Hook kaydı
+    │           // Öncelik yönetimi
+    │       }
+    │   }
+    │   ```
+    │
+    └── HookSystem/
+        ├── HookManager.php
+        │   Amaç: Hook sistemi yönetimi
+        │   Metodlar:
+        │   - addHook()
+        │   - removeHook()
+        │   - executeHook()
+        │
+        └── HookRegistry.php
+            Amaç: Hook kayıtlarını tutma
+            Özellikler:
+            - Hook listesi
+            - Hook öncelikleri
+            - Hook durumları
