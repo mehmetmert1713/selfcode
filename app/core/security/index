@@ -1,0 +1,56 @@
+app/Core/Security/
+├── Authentication/
+│   ├── AuthManager.php
+│   │   Amaç: Kimlik doğrulama yönetimi
+│   │   İçerik:
+│   │   ```php
+│   │   class AuthManager
+│   │   {
+│   │       // Kullanıcı doğrulama
+│   │       public function authenticate(array $credentials): bool
+│   │       {
+│   │           // Kimlik doğrulama mantığı
+│   │           // Oturum yönetimi
+│   │       }
+│   │
+│   │       // Çoklu faktör doğrulama
+│   │       public function verifyTwoFactor(string $code): bool
+│   │       {
+│   │           // 2FA kontrolü
+│   │       }
+│   │   }
+│   │   ```
+│   │
+│   └── MultiFactorAuth/
+│       ├── TOTPManager.php
+│       └── SMSVerification.php
+
+├── Firewall/
+│   ├── WAF.php
+│   │   Amaç: Web Application Firewall
+│   │   Özellikler:
+│   │   - İstek filtreleme
+│   │   - XSS koruması
+│   │   - SQL injection koruması
+│   │
+│   └── RuleEngine.php
+│       Amaç: Güvenlik kuralları motoru
+│       Metodlar:
+│       - addRule()
+│       - validateRequest()
+│       - blockRequest()
+
+└── Encryption/
+    ├── DataEncryption.php
+    │   Amaç: Veri şifreleme servisi
+    │   Metodlar:
+    │   - encrypt()
+    │   - decrypt()
+    │   - hashPassword()
+    │
+    └── KeyManager.php
+        Amaç: Şifreleme anahtarı yönetimi
+        Özellikler:
+        - Anahtar rotasyonu
+        - Anahtar saklama
+        - Anahtar yedekleme
