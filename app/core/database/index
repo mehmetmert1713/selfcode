@@ -1,0 +1,72 @@
+app/Core/Database/
+├── QueryBuilder/
+│   ├── QueryBuilder.php
+│   │   Amaç: SQL sorgu oluşturucu
+│   │   İçerik:
+│   │   ```php
+│   │   class QueryBuilder
+│   │   {
+│   │       // Sorgu oluşturma
+│   │       public function build(): string
+│   │       {
+│   │           // Sorgu bileşenlerini birleştir
+│   │           // Parametreleri güvenli hale getir
+│   │       }
+│   │
+│   │       // İlişki yönetimi
+│   │       public function with(string $relation): self
+│   │       {
+│   │           // İlişki sorgularını ekle
+│   │       }
+│   │   }
+│   │   ```
+│   │
+│   └── QueryOptimizer.php
+│       Amaç: Sorgu optimizasyonu
+│       Özellikler:
+│       - İndeks kullanım analizi
+│       - Sorgu planı optimizasyonu
+│       - N+1 sorgu önleme
+
+├── Migration/
+│   ├── MigrationManager.php
+│   │   Amaç: Veritabanı migrasyon yönetimi
+│   │   Metodlar:
+│   │   - migrate()
+│   │   - rollback()
+│   │   - reset()
+│   │
+│   └── SchemaBuilder.php
+│       Amaç: Veritabanı şema oluşturma
+│       Özellikler:
+│       - Tablo oluşturma
+│       - İndeks yönetimi
+│       - Foreign key yönetimi
+
+└── Transactions/
+    ├── TransactionManager.php
+    │   Amaç: Veritabanı transaction yönetimi
+    │   İçerik:
+    │   ```php
+    │   class TransactionManager
+    │   {
+    │       // Transaction başlatma
+    │       public function begin(): void
+    │       {
+    │           // Yeni transaction başlat
+    │           // Savepoint oluştur
+    │       }
+    │
+    │       // Transaction yönetimi
+    │       public function commit(): void
+    │       public function rollback(): void
+    │       public function savepoint(string $name): void
+    │   }
+    │   ```
+    │
+    └── TransactionScope.php
+        Amaç: Transaction scope yönetimi
+        Özellikler:
+        - Otomatik rollback
+        - Nested transaction
+        - Dead lock yönetimi
