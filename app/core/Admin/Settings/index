@@ -1,0 +1,74 @@
+app/Core/Admin/Settings/
+├── Managers/
+│   ├── SettingsManager.php
+│   │   Amaç: Ayar yönetim sistemi
+│   │   İçerik:
+│   │   ```php
+│   │   class SettingsManager
+│   │   {
+│   │       // Ayar grupları
+│   │       public function registerGroup(string $name, array $config): void
+│   │       {
+│   │           // Grup tanımlama
+│   │           // Validasyon kuralları
+│   │           // Varsayılan değerler
+│   │       }
+│   │
+│   │       // Ayar kaydetme
+│   │       public function save(string $group, array $settings): void
+│   │       {
+│   │           // Değer kontrolü
+│   │           // Cache güncelleme
+│   │           // Event tetikleme
+│   │       }
+│   │   }
+│   │   ```
+│   │
+│   └── ConfigurationManager.php
+│       Amaç: Sistem yapılandırma yönetimi
+│       Özellikler:
+│       - Yapılandırma dosyaları
+│       - Ortam değişkenleri
+│       - Cache yönetimi
+
+├── Types/
+│   ├── GeneralSettings.php
+│   │   Amaç: Genel ayarlar
+│   │   Özellikler:
+│   │   - Site bilgileri
+│   │   - İletişim bilgileri
+│   │   - Zaman ayarları
+│   │
+│   ├── SecuritySettings.php
+│   │   Amaç: Güvenlik ayarları
+│   │   Özellikler:
+│   │   - Güvenlik politikaları
+│   │   - Şifre politikaları
+│   │   - IP kısıtlamaları
+│   │
+│   ├── EmailSettings.php
+│   │   Amaç: E-posta ayarları
+│   │   Özellikler:
+│   │   - SMTP yapılandırması
+│   │   - Mail şablonları
+│   │   - Bildirim ayarları
+│   │
+│   └── MaintenanceSettings.php
+│       Amaç: Bakım ayarları
+│       Özellikler:
+│       - Bakım modu
+│       - Yedekleme ayarları
+│       - Log ayarları
+
+└── Validators/
+    ├── SettingValidator.php
+    │   Amaç: Ayar doğrulama
+    │   Özellikler:
+    │   - Değer kontrolü
+    │   - Format kontrolü
+    │   - Güvenlik kontrolü
+    │
+    └── Rules/
+        ├── EmailRule.php
+        ├── URLRule.php
+        └── IPRule.php
