@@ -1,0 +1,12 @@
+├── main              # Kararlı sürüm
+├── develop           # Geliştirme branch'i
+│
+├── feature/          # Özellik geliştirmeleri
+│   ├── feature-1
+│   └── feature-2
+│
+├── module/           # Modül geliştirmeleri
+│   ├── blog
+│   └── ecommerce
+│
+└── hotfix/          # Acil düzeltmeler
