@@ -1,0 +1,344 @@
+project-root/
+├── app/                              # Ana Uygulama Dizini
+│   ├── Core/                         # CMS Çekirdek Sistemi
+│   │   ├── Bootstrap/               # Sistem Başlatma
+│   │   │   ├── AppKernel.php       # Ana çekirdek başlatıcı
+│   │   │   ├── ModuleKernel.php    # Modül sistemi başlatıcı
+│   │   │   └── ServiceLoader.php    # Servis yükleyici
+│   │   │
+│   │   ├── Foundation/             # Temel Yapı
+│   │   │   ├── Application.php     # Ana uygulama sınıfı
+│   │   │   ├── Container.php       # DI container
+│   │   │   └── ServiceProvider.php # Servis sağlayıcı temel
+│   │   │
+│   │   ├── Engine/                 # CMS Motorları
+│   │   │   ├── Module/            # Modül Motoru
+│   │   │   │   ├── ModuleManager.php
+│   │   │   │   ├── ModuleLoader.php
+│   │   │   │   └── ModuleRegistry.php
+│   │   │   │
+│   │   │   ├── Theme/             # Tema Motoru
+│   │   │   │   ├── ThemeManager.php
+│   │   │   │   ├── ThemeCompiler.php
+│   │   │   │   └── ThemeAssets.php
+│   │   │   │
+│   │   │   └── Plugin/            # Eklenti Motoru
+│   │   │       ├── PluginManager.php
+│   │   │       └── PluginLoader.php
+│   │   │
+│   │   ├── Security/              # Güvenlik Sistemi
+│   │   │   ├── Authentication/    # Kimlik Doğrulama
+│   │   │   │   ├── AuthManager.php
+│   │   │   │   ├── SocialAuth.php
+│   │   │   │   └── TwoFactor/
+│   │   │   │
+│   │   │   ├── Authorization/     # Yetkilendirme
+│   │   │   │   ├── PolicyManager.php
+│   │   │   │   └── PermissionManager.php
+│   │   │   │
+│   │   │   ├── Firewall/         # Güvenlik Duvarı
+│   │   │   │   ├── WAF.php
+│   │   │   │   └── RuleEngine.php
+│   │   │   │
+│   │   │   └── Encryption/       # Şifreleme
+│   │   │       ├── Encryptor.php
+│   │   │       └── KeyManager.php
+│   │   │
+│   │   ├── Database/             # Veritabanı Katmanı
+│   │   │   ├── QueryBuilder/
+│   │   │   │   ├── QueryBuilder.php
+│   │   │   │   └── QueryOptimizer.php
+│   │   │   │
+│   │   │   ├── Migrations/
+│   │   │   │   ├── MigrationManager.php
+│   │   │   │   └── SchemaBuilder.php
+│   │   │   │
+│   │   │   └── Cache/
+│   │   │       ├── QueryCache.php
+│   │   │       └── ResultCache.php
+│   │   │
+│   │   ├── Cache/                # Önbellek Sistemi
+│   │   │   ├── CacheManager.php
+│   │   │   ├── Drivers/
+│   │   │   │   ├── Redis/
+│   │   │   │   └── Memcached/
+│   │   │   │
+│   │   │   └── Tags/
+│   │   │
+│   │   ├── Queue/                # Kuyruk Sistemi
+│   │   │   ├── QueueManager.php
+│   │   │   ├── Workers/
+│   │   │   └── Jobs/
+│   │   │
+│   │   ├── Events/               # Olay Sistemi
+│   │   │   ├── EventDispatcher.php
+│   │   │   ├── EventSubscriber.php
+│   │   │   └── Listeners/
+│   │   │
+│   │   └── Support/              # Yardımcı Bileşenler
+│   │       ├── Helpers/
+│   │       ├── Facades/
+│   │       └── Traits/
+│   ├── Http/                         # HTTP Katmanı
+│   │   ├── Controllers/             # Kontrolcüler
+│   │   │   ├── Admin/              # Admin Kontrolcüleri
+│   │   │   │   ├── DashboardController.php
+│   │   │   │   ├── ModuleController.php
+│   │   │   │   ├── ThemeController.php
+│   │   │   │   ├── UserController.php
+│   │   │   │   ├── SettingsController.php
+│   │   │   │   └── MediaController.php
+│   │   │   │
+│   │   │   ├── Api/               # API Kontrolcüleri
+│   │   │   │   ├── v1/
+│   │   │   │   └── v2/
+│   │   │   │
+│   │   │   └── Frontend/         # Frontend Kontrolcüleri
+│   │   │       ├── HomeController.php
+│   │   │       ├── PageController.php
+│   │   │       └── SitemapController.php
+│   │   │
+│   │   ├── Middleware/           # Ara Yazılımlar
+│   │   │   ├── Authentication/
+│   │   │   │   ├── AdminAuth.php
+│   │   │   │   └── ApiAuth.php
+│   │   │   │
+│   │   │   ├── Security/
+│   │   │   │   ├── XSSProtection.php
+│   │   │   │   ├── CSRFProtection.php
+│   │   │   │   └── RateLimiter.php
+│   │   │   │
+│   │   │   └── Performance/
+│   │   │       ├── CacheMiddleware.php
+│   │   │       └── CompressionMiddleware.php
+│   │   │
+│   │   └── Resources/            # API Kaynakları
+│   │       ├── UserResource.php
+│   │       └── ModuleResource.php
+│   │
+│   ├── Services/                     # Servis Katmanı
+│   │   ├── Media/                   # Medya Servisleri
+│   │   │   ├── ImageService.php
+│   │   │   ├── VideoService.php
+│   │   │   └── FileManager.php
+│   │   │
+│   │   ├── SEO/                    # SEO Servisleri
+│   │   │   ├── SitemapGenerator.php
+│   │   │   ├── MetaManager.php
+│   │   │   └── SchemaGenerator.php
+│   │   │
+│   │   └── Integration/            # Entegrasyon Servisleri
+│   │       ├── MailService.php
+│   │       ├── PaymentService.php
+│   │       └── NotificationService.php
+│   │
+│   ├── Microservices/               # Mikroservis Yapısı
+│   │   ├── Gateway/                # API Gateway
+│   │   │   ├── GatewayManager.php
+│   │   │   └── ServiceRegistry.php
+│   │   │
+│   │   ├── Communication/          # Servis İletişimi
+│   │   │   ├── MessageBroker.php
+│   │   │   └── EventBus.php
+│   │   │
+│   │   └── Services/               # Mikroservisler
+│   │       ├── AuthService/
+│   │       ├── MediaService/
+│   │       └── NotificationService/
+│   │
+│   ├── Models/                       # Veritabanı Modelleri
+│   │   ├── User.php
+│   │   ├── Role.php
+│   │   ├── Permission.php
+│   │   ├── Module.php
+│   │   ├── Theme.php
+│   │   └── Setting.php
+│   │
+│   └── Providers/                    # Servis Sağlayıcılar
+│       ├── AppServiceProvider.php
+│       ├── RouteServiceProvider.php
+│       ├── AuthServiceProvider.php
+│       ├── EventServiceProvider.php
+│       ├── ModuleServiceProvider.php
+│       └── ThemeServiceProvider.php
+│
+├── config/                           # Yapılandırma Dosyaları
+│   ├── app.php
+│   ├── auth.php
+│   ├── cache.php
+│   ├── cors.php
+│   ├── database.php
+│   ├── filesystems.php
+│   ├── logging.php
+│   ├── mail.php
+│   ├── queue.php
+│   ├── services.php
+│   ├── session.php
+│   ├── core.php                    # CMS Core Yapılandırması
+│   ├── modules.php                 # Modül Yapılandırması
+│   ├── themes.php                  # Tema Yapılandırması
+│   └── seo.php                     # SEO Yapılandırması
+[Previous structure continues...]
+
+├── database/                         # Veritabanı
+│   ├── factories/                   # Model Fabrikaları
+│   │   ├── UserFactory.php
+│   │   └── ModuleFactory.php
+│   │
+│   ├── migrations/                  # Veritabanı Migrasyonları
+│   │   ├── core/                   # Core Migrasyonlar
+│   │   │   ├── create_users_table.php
+│   │   │   ├── create_roles_table.php
+│   │   │   ├── create_permissions_table.php
+│   │   │   ├── create_modules_table.php
+│   │   │   └── create_themes_table.php
+│   │   │
+│   │   └── modules/                # Modül Migrasyonları
+│   │
+│   └── seeders/                    # Veritabanı Tohumlayıcıları
+│       ├── DatabaseSeeder.php
+│       ├── UserSeeder.php
+│       └── SettingsSeeder.php
+│
+├── modules/                          # Modül Dizini
+│   ├── Blog/                       # Blog Modülü
+│   │   ├── Config/
+│   │   │   ├── config.php
+│   │   │   └── permissions.php
+│   │   │
+│   │   ├── Database/
+│   │   │   ├── Migrations/
+│   │   │   └── Seeders/
+│   │   │
+│   │   ├── Http/
+│   │   │   ├── Controllers/
+│   │   │   ├── Middleware/
+│   │   │   └── Requests/
+│   │   │
+│   │   ├── Models/
+│   │   │   ├── Post.php
+│   │   │   └── Category.php
+│   │   │
+│   │   ├── Resources/
+│   │   │   ├── views/
+│   │   │   ├── assets/
+│   │   │   └── lang/
+│   │   │
+│   │   ├── Routes/
+│   │   │   ├── web.php
+│   │   │   └── api.php
+│   │   │
+│   │   └── module.json
+│   │
+│   └── Ecommerce/                  # E-ticaret Modülü
+│       ├── [Similar structure to Blog]
+│
+├── themes/                          # Tema Dizini
+│   ├── Admin/                      # Admin Teması
+│   │   ├── assets/
+│   │   │   ├── css/
+│   │   │   │   ├── admin.css
+│   │   │   │   └── components/
+│   │   │   │
+│   │   │   ├── js/
+│   │   │   │   ├── admin.js
+│   │   │   │   └── components/
+│   │   │   │
+│   │   │   └── images/
+│   │   │
+│   │   ├── layouts/
+│   │   │   ├── master.blade.php
+│   │   │   └── components/
+│   │   │
+│   │   ├── views/
+│   │   │   ├── dashboard/
+│   │   │   ├── modules/
+│   │   │   └── settings/
+│   │   │
+│   │   └── theme.json
+│   │
+│   └── Frontend/                   # Frontend Temaları
+│       ├── Default/
+│       │   ├── assets/
+│       │   ├── layouts/
+│       │   ├── views/
+│       │   └── theme.json
+│       │
+│       └── Custom/
+│           ├── [Similar structure to Default]
+│
+├── public/                          # Public Dizini
+│   ├── assets/                     # Public Assets
+│   │   ├── css/
+│   │   ├── js/
+│   │   └── images/
+│   │
+│   ├── themes/                     # Tema Public Dosyaları
+│   │   ├── admin/
+│   │   └── frontend/
+│   │
+│   ├── uploads/                    # Yüklenen Dosyalar
+│   │   ├── images/
+│   │   │   ├── original/
+│   │   │   └── thumbnails/
+│   │   │
+│   │   ├── videos/
+│   │   └── documents/
+│   │
+│   └── storage/                    # Public Storage Bağlantısı
+│
+├── resources/                       # Frontend Kaynakları
+│   ├── js/
+│   │   ├── app.js
+│   │   └── components/
+│   │
+│   ├── css/
+│   │   ├── app.css
+│   │   └── components/
+│   │
+│   ├── views/
+│   │   ├── layouts/
+│   │   ├── components/
+│   │   └── pages/
+│   │
+│   └── lang/                      # Dil Dosyaları
+│       ├── en/
+│       └── tr/
+│
+├── storage/                         # Storage Dizini
+│   ├── app/
+│   │   ├── public/
+│   │   └── modules/
+│   │
+│   ├── framework/
+│   │   ├── cache/
+│   │   ├── sessions/
+│   │   └── views/
+│   │
+│   └── logs/
+│
+├── tests/                           # Test Dizini
+│   ├── Unit/
+│   │   ├── Core/
+│   │   ├── Modules/
+│   │   └── Themes/
+│   │
+│   ├── Feature/
+│   │   ├── Admin/
+│   │   ├── Api/
+│   │   └── Frontend/
+│   │
+│   └── Browser/                    # Browser Testleri
+│
+├── vendor/                          # Composer Bağımlılıkları
+│
+├── node_modules/                    # NPM Bağımlılıkları
+│
+├── .env                            # Ortam Değişkenleri
+├── .env.example                    # Örnek Env Dosyası
+├── .gitignore
+├── artisan
+├── composer.json
+├── package.json
+├── phpunit.xml
+└── README.md
