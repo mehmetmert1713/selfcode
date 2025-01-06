@@ -1,0 +1,15 @@
+Gists/
+├── Core/
+│   ├── core-implementations/
+│   ├── service-examples/
+│   └── utility-functions/
+│
+├── Modules/
+│   ├── module-templates/
+│   ├── integration-examples/
+│   └── common-patterns/
+│
+└── Snippets/
+    ├── database-queries/
+    ├── api-endpoints/
+    └── test-cases/
