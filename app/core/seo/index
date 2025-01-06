@@ -1,0 +1,53 @@
+app/Core/SEO/
+├── Managers/
+│   ├── SEOManager.php
+│   │   Amaç: SEO yönetim sistemi
+│   │   İçerik:
+│   │   ```php
+│   │   class SEOManager
+│   │   {
+│   │       // Meta etiket yönetimi
+│   │       public function setMetaTags(array $tags): void
+│   │       {
+│   │           // Meta tag optimizasyonu
+│   │           // OG tag yönetimi
+│   │           // Twitter card yönetimi
+│   │       }
+│   │
+│   │       // Yapısal veri
+│   │       public function addSchema(string $type, array $data): void
+│   │       {
+│   │           // Schema.org markup
+│   │           // JSON-LD oluşturma
+│   │       }
+│   │   }
+│   │   ```
+│   │
+│   └── SitemapManager.php
+│       Amaç: Sitemap yönetimi
+│       Özellikler:
+│       - Otomatik sitemap
+│       - Öncelik yönetimi
+│       - Değişiklik sıklığı
+
+├── Google/
+│   ├── SiteKit/
+│   │   ├── AnalyticsService.php
+│   │   ├── SearchConsoleService.php
+│   │   └── TagManagerService.php
+│   │
+│   └── Integration/
+│       ├── GoogleAuth.php
+│       └── APIClient.php
+
+└── Analysis/
+    ├── SEOAnalyzer.php
+    │   Amaç: SEO analiz aracı
+    │   Özellikler:
+    │   - İçerik analizi
+    │   - Anahtar kelime kontrolü
+    │   - Bağlantı analizi
+    │
+    └── Reports/
+        ├── SEOReport.php
+        └── AuditReport.php
