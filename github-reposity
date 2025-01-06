@@ -1,0 +1,39 @@
+modular-cms/
+├── .github/
+│   ├── workflows/                # GitHub Actions
+│   │   ├── main.yml             # Ana CI/CD pipeline
+│   │   ├── testing.yml          # Test automation
+│   │   └── deployment.yml       # Deployment
+│   │
+│   └── ISSUE_TEMPLATE/          # Issue şablonları
+│       ├── bug_report.md
+│       ├── feature_request.md
+│       └── module_proposal.md
+│
+├── docs/                        # Ana Dokümantasyon
+│   ├── README.md               # Proje ana dokümanı
+│   ├── CONTRIBUTING.md         # Katkı sağlama rehberi
+│   ├── SECURITY.md             # Güvenlik politikası
+│   │
+│   ├── architecture/           # Mimari dokümanlar
+│   │   ├── core/
+│   │   ├── modules/
+│   │   └── diagrams/
+│   │
+│   ├── development/            # Geliştirici dokümanları
+│   │   ├── setup.md
+│   │   ├── coding-standards.md
+│   │   └── testing.md
+│   │
+│   └── modules/                # Modül dokümanları
+│       ├── blog/
+│       ├── ecommerce/
+│       └── templates/
+│
+├── src/                        # Kaynak kodlar
+│   [Tüm proje kaynak kodları]
+│
+└── examples/                   # Örnek kodlar ve kullanımlar
+    ├── core-usage/
+    ├── module-examples/
+    └── integration-examples/
