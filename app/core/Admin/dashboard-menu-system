@@ -1,0 +1,14 @@
+// Dinamik menü oluşturma
+$menuManager->createMenu('sidebar')
+    ->addItem([
+        'title' => 'Dashboard',
+        'route' => 'admin.dashboard',
+        'icon' => 'dashboard',
+        'permission' => 'access_dashboard'
+    ])
+    ->addItem([
+        'title' => 'Users',
+        'route' => 'admin.users',
+        'icon' => 'users',
+        'permission' => 'manage_users'
+    ]);
