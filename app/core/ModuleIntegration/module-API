@@ -1,0 +1,24 @@
+// Modül API yapılandırması
+return [
+    'api' => [
+        'endpoints' => [
+            'users' => [
+                'methods' => ['GET', 'POST', 'PUT', 'DELETE'],
+                'middleware' => ['auth:api', 'throttle:60,1'],
+                'prefix' => 'v1',
+                'controller' => UserApiController::class
+            ],
+            'products' => [
+                'methods' => ['GET', 'POST', 'PUT', 'DELETE'],
+                'middleware' => ['auth:api', 'throttle:60,1'],
+                'prefix' => 'v1',
+                'controller' => ProductApiController::class
+            ]
+        ],
+        'options' => [
+            'rate_limit' => 60,
+            'cache' => true,
+            'cache_duration' => 3600
+        ]
+    ]
+];
