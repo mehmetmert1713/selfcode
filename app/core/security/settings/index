@@ -1,0 +1,101 @@
+app/Core/Security/
+├── Services/
+│   ├── SecurityService.php
+│   │   Amaç: Ana güvenlik servisi
+│   │   İçerik:
+│   │   ```php
+│   │   class SecurityService
+│   │   {
+│   │       // Güvenlik taraması
+│   │       public function scan(): SecurityReport
+│   │       {
+│   │           // Zayıflık taraması
+│   │           $vulnerabilities = $this->scanVulnerabilities();
+│   │           
+│   │           // Tehdit tespiti
+│   │           $threats = $this->detectThreats();
+│   │           
+│   │           // Güvenlik raporu
+│   │           return new SecurityReport($vulnerabilities, $threats);
+│   │       }
+│   │
+│   │       // Güvenlik önlemleri
+│   │       public function enforce(): void
+│   │       {
+│   │           // Güvenlik politikaları
+│   │           // Erişim kontrolleri
+│   │           // Şifreleme
+│   │           // Rate limiting
+│   │       }
+│   │   }
+│   │   ```
+│   │
+│   ├── PenetrationTestService.php
+│   │   Amaç: Sızma testi servisi
+│   │   Özellikler:
+│   │   - Otomatik testler
+│   │   - Zayıflık taraması
+│   │   - Raporlama
+│   │
+│   └── ThreatDetectionService.php
+│       Amaç: Tehdit tespit servisi
+│       Özellikler:
+│       - Anormal davranış tespiti
+│       - Saldırı tespiti
+│       - Önleme sistemi
+
+├── Firewall/
+│   ├── FirewallManager.php
+│   │   Amaç: Güvenlik duvarı yönetimi
+│   │   İçerik:
+│   │   ```php
+│   │   class FirewallManager
+│   │   {
+│   │       // Kural yönetimi
+│   │       public function addRule(Rule $rule): void
+│   │       {
+│   │           // Kural doğrulama
+│   │           // Kural uygulama
+│   │           // Log kaydı
+│   │       }
+│   │
+│   │       // Trafik analizi
+│   │       public function analyzeTraffic(Request $request): bool
+│   │       {
+│   │           // İstek analizi
+│   │           // Kural kontrolü
+│   │           // Karar verme
+│   │       }
+│   │   }
+│   │   ```
+│   │
+│   └── Rules/
+│       ├── IPRule.php
+│       ├── RateLimitRule.php
+│       └── ContentRule.php
+
+├── Encryption/
+│   ├── EncryptionService.php
+│   │   Amaç: Şifreleme servisi
+│   │   Özellikler:
+│   │   - Veri şifreleme
+│   │   - Anahtar yönetimi
+│   │   - Hash işlemleri
+│   │
+│   └── Keys/
+│       ├── KeyManager.php
+│       ├── KeyRotation.php
+│       └── KeyStorage.php
+
+└── Audit/
+    ├── AuditService.php
+    │   Amaç: Denetim servisi
+    │   Özellikler:
+    │   - İşlem takibi
+    │   - Güvenlik logları
+    │   - Uyumluluk kontrolleri
+    │
+    └── Reports/
+        ├── AuditReport.php
+        ├── ComplianceReport.php
+        └── SecurityReport.php
