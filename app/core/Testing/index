@@ -1,0 +1,115 @@
+app/Core/Testing/
+├── Framework/
+│   ├── TestManager.php
+│   │   Amaç: Test yönetim sistemi
+│   │   İçerik:
+│   │   ```php
+│   │   class TestManager
+│   │   {
+│   │       // Test süiti çalıştırma
+│   │       public function runTestSuite(string $suite): TestResult
+│   │       {
+│   │           // Test ortamı hazırlama
+│   │           $this->prepareTestEnvironment();
+│   │           
+│   │           // Testleri çalıştır
+│   │           $results = $this->executeTests($suite);
+│   │           
+│   │           // Sonuçları raporla
+│   │           return $this->generateReport($results);
+│   │       }
+│   │
+│   │       // Modül testleri
+│   │       public function testModule(string $moduleName): void
+│   │       {
+│   │           // Modül testlerini bul
+│   │           // Bağımlılıkları kontrol et
+│   │           // Testleri çalıştır
+│   │       }
+│   │   }
+│   │   ```
+│   │
+│   └── TestCase/
+│       ├── BaseTestCase.php
+│       ├── ModuleTestCase.php
+│       └── APITestCase.php
+
+├── Types/
+│   ├── Unit/
+│   │   ├── UnitTestManager.php
+│   │   │   Amaç: Birim test yönetimi
+│   │   │   Özellikler:
+│   │   │   - İzole test ortamı
+│   │   │   - Mock objects
+│   │   │   - Assertions
+│   │   │
+│   │   └── Assertions/
+│   │       ├── CoreAssertions.php
+│   │       └── CustomAssertions.php
+│   │
+│   ├── Integration/
+│   │   ├── IntegrationTestManager.php
+│   │   │   Amaç: Entegrasyon testleri
+│   │   │   Özellikler:
+│   │   │   - Modül entegrasyonu
+│   │   │   - API testleri
+│   │   │   - Veritabanı testleri
+│   │   │
+│   │   └── TestEnvironment/
+│   │       ├── DatabaseEnvironment.php
+│   │       └── ServiceEnvironment.php
+│   │
+│   └── E2E/
+│       ├── E2ETestManager.php
+│       │   Amaç: Uçtan uca testler
+│       │   Özellikler:
+│       │   - Browser testleri
+│       │   - User flow testleri
+│       │   - Performance testleri
+│       │
+│       └── Browsers/
+│           ├── ChromeDriver.php
+│           └── FirefoxDriver.php
+
+├── Mocking/
+│   ├── MockManager.php
+│   │   Amaç: Mock veri yönetimi
+│   │   İçerik:
+│   │   ```php
+│   │   class MockManager
+│   │   {
+│   │       // Mock data oluşturma
+│   │       public function createMock(string $type): MockData
+│   │       {
+│   │           // Mock tipi belirleme
+│   │           // Veri oluşturma
+│   │           // İlişkileri kurma
+│   │       }
+│   │
+│   │       // Mock servis
+│   │       public function mockService(string $service): MockService
+│   │       {
+│   │           // Servis simülasyonu
+│   │           // Davranış tanımlama
+│   │           // Yanıt hazırlama
+│   │       }
+│   │   }
+│   │   ```
+│   │
+│   └── Factories/
+│       ├── ModelFactory.php
+│       ├── ServiceFactory.php
+│       └── ResponseFactory.php
+
+└── Reports/
+    ├── ReportGenerator.php
+    │   Amaç: Test raporu oluşturma
+    │   Özellikler:
+    │   - Detaylı raporlama
+    │   - Hata analizi
+    │   - Performans metrikleri
+    │
+    └── Formats/
+        ├── HTMLReport.php
+        ├── JSONReport.php
+        └── XMLReport.php
