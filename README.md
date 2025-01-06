@@ -1,0 +1,2 @@
+# selfcode
+for claude ai 
