@@ -1,0 +1,29 @@
+# [Modül Adı] Dokümantasyonu
+
+## Genel Bakış
+- Modül amacı
+- Temel özellikler
+- Bağımlılıklar
+
+## Teknik Detaylar
+- Dizin yapısı
+- Sınıf diyagramları
+- Veritabanı şeması
+- API endpoints
+
+## Entegrasyon
+- Core sistem ile entegrasyon
+- Diğer modüllerle etkileşim
+- Hook noktaları
+
+## Implementation Adımları
+1. Temel yapı
+2. Veritabanı kurulumu
+3. Servis implementasyonu
+4. Controller geliştirilmesi
+5. View entegrasyonu
+
+## Test Senaryoları
+- Unit testler
+- Feature testler
+- Integration testler
