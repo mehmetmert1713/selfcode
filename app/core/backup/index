@@ -1,0 +1,74 @@
+app/Core/Backup/
+├── Services/
+│   ├── BackupService.php
+│   │   Amaç: Yedekleme servisi
+│   │   İçerik:
+│   │   ```php
+│   │   class BackupService
+│   │   {
+│   │       // Yedek alma
+│   │       public function createBackup(string $type = 'full'): Backup
+│   │       {
+│   │           // Yedek stratejisi seçimi
+│   │           $strategy = $this->getStrategy($type);
+│   │           
+│   │           // Yedekleme işlemi
+│   │           $backup = $strategy->execute();
+│   │           
+│   │           // Yedek doğrulama
+│   │           $this->validateBackup($backup);
+│   │           
+│   │           return $backup;
+│   │       }
+│   │
+│   │       // Yedekten geri yükleme
+│   │       public function restore(Backup $backup): bool
+│   │       {
+│   │           // Yedek doğrulama
+│   │           // Veri kurtarma
+│   │           // Sistem kontrolü
+│   │       }
+│   │   }
+│   │   ```
+│   │
+│   └── VerificationService.php
+│       Amaç: Yedek doğrulama servisi
+│       Özellikler:
+│       - Bütünlük kontrolü
+│       - Veri doğrulama
+│       - Test geri yükleme
+
+├── Strategies/
+│   ├── FullBackup.php
+│   │   Amaç: Tam yedekleme
+│   │   Özellikler:
+│   │   - Tüm sistem yedeği
+│   │   - Veri tabanı yedeği
+│   │   - Dosya yedeği
+│   │
+│   ├── IncrementalBackup.php
+│   │   Amaç: Artışlı yedekleme
+│   │   Özellikler:
+│   │   - Değişiklik takibi
+│   │   - Delta yedekleme
+│   │   - Optimizasyon
+│   │
+│   └── DifferentialBackup.php
+│       Amaç: Fark yedeği
+│       Özellikler:
+│       - Son tam yedekten farklar
+│       - Orta seviye yedek
+│       - Hızlı geri yükleme
+
+└── Storage/
+    ├── StorageManager.php
+    │   Amaç: Yedek depolama yönetimi
+    │   Özellikler:
+    │   - Depolama rotasyonu
+    │   - Arşivleme
+    │   - Temizleme
+    │
+    └── Providers/
+        ├── LocalStorage.php
+        ├── CloudStorage.php
+        └── DistributedStorage.php
