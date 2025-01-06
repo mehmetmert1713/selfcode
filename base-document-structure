@@ -1,0 +1,32 @@
+docs/
+├── 00-Project-Overview/
+│   ├── 01-introduction.md          # Proje tanıtımı
+│   ├── 02-architecture.md          # Mimari yapı
+│   ├── 03-technologies.md          # Kullanılan teknolojiler
+│   └── 04-requirements.md          # Sistem gereksinimleri
+│
+├── 01-Core-System/
+│   ├── 01-structure.md             # Core yapı detayları
+│   ├── 02-components.md            # Temel bileşenler
+│   ├── 03-services.md              # Servis yapıları
+│   └── 04-security.md              # Güvenlik yapısı
+│
+├── 02-Modules/
+│   ├── 01-module-development.md    # Modül geliştirme klavuzu
+│   ├── 02-module-structure.md      # Modül yapısı
+│   └── [her-modül-için]/
+│       ├── requirements.md         # Modül gereksinimleri
+│       ├── database.md            # Veritabanı şeması
+│       ├── api.md                 # API dökümantasyonu
+│       └── implementation.md      # Uygulama detayları
+│
+├── 03-Development-Guide/
+│   ├── 01-getting-started.md      # Başlangıç rehberi
+│   ├── 02-coding-standards.md     # Kodlama standartları
+│   ├── 03-git-workflow.md         # Git iş akışı
+│   └── 04-testing-guide.md        # Test rehberi
+│
+└── 04-AI-Development/             # Claude ile Geliştirme
+    ├── 01-prompts/                # Prompt şablonları
+    ├── 02-checkpoints/            # Kontrol noktaları
+    └── 03-troubleshooting/        # Sorun çözümleri
