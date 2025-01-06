@@ -1,0 +1,67 @@
+app/Core/CDN/
+├── Managers/
+│   ├── CDNManager.php
+│   │   Amaç: CDN yönetim sistemi
+│   │   İçerik:
+│   │   ```php
+│   │   class CDNManager
+│   │   {
+│   │       // İçerik dağıtımı
+│   │       public function distribute(Media $media): void
+│   │       {
+│   │           // Edge sunucu seçimi
+│   │           $edge = $this->selectEdgeServer($media);
+│   │           
+│   │           // İçerik kopyalama
+│   │           $this->copyToEdge($media, $edge);
+│   │           
+│   │           // Cache yönetimi
+│   │           $this->manageCacheRules($media);
+│   │       }
+│   │
+│   │       // Cache invalidasyon
+│   │       public function purge(string $path): void
+│   │       {
+│   │           // Cache temizleme
+│   │           // Edge sunucu güncelleme
+│   │           // Yeni versiyon dağıtımı
+│   │       }
+│   │   }
+│   │   ```
+│   │
+│   └── EdgeManager.php
+│       Amaç: Edge sunucu yönetimi
+│       Özellikler:
+│       - Sunucu dağıtımı
+│       - Load balancing
+│       - Health check
+
+├── Optimization/
+│   ├── AssetOptimizer.php
+│   │   Amaç: Asset optimizasyonu
+│   │   Özellikler:
+│   │   - Format optimizasyonu
+│   │   - Sıkıştırma
+│   │   - Caching stratejileri
+│   │
+│   └── DeliveryOptimizer.php
+│       Amaç: Dağıtım optimizasyonu
+│       Özellikler:
+│       - Rota optimizasyonu
+│       - Bağlantı yönetimi
+│       - Önbellek stratejisi
+
+└── Security/
+    ├── TokenAuth.php
+    │   Amaç: Token bazlı güvenlik
+    │   Özellikler:
+    │   - Token üretimi
+    │   - Doğrulama
+    │   - Süre yönetimi
+    │
+    └── URLSecurity.php
+        Amaç: URL güvenliği
+        Özellikler:
+        - Signed URL
+        - Geçici URL
+        - Erişim kontrolü
