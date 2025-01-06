@@ -1,0 +1,52 @@
+Geliştirici Rehberi İçeriği
+
+Başlangıç Rehberi
+
+Sistem gereksinimleri
+Kurulum adımları
+İlk yapılandırma
+Temel kullanım
+
+
+Modül Geliştirme
+
+Modül yapısı
+Geliştirme adımları
+API entegrasyonu
+Best practices
+
+
+Tema Geliştirme
+
+Tema mimarisi
+Asset yönetimi
+Responsive tasarım
+Özelleştirme
+
+
+API Kullanımı
+
+Endpoint listesi
+Kimlik doğrulama
+Rate limiting
+Örnekler
+
+
+Güvenlik Rehberi
+
+Güvenlik best practices
+XSS koruması
+CSRF koruması
+Input validasyonu
+
+
+Performans Optimizasyonu
+
+Cache stratejileri
+Query optimizasyonu
+Asset optimizasyonu
+Load balancing
+
+
+
+Bu dokümantasyon sistemi, geliştiricilerin sistemi etkin bir şekilde kullanabilmeleri ve genişletebilmeleri için gereken tüm bilgileri içerir.
