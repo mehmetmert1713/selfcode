@@ -1,0 +1,21 @@
+// Aktivite takip sistemi
+class ActivityLogger
+{
+    public function log(User $user, string $action, array $context = []): void
+    {
+        Activity::create([
+            'user_id' => $user->id,
+            'action' => $action,
+            'ip_address' => request()->ip(),
+            'user_agent' => request()->userAgent(),
+            'context' => $context
+        ]);
+    }
+
+    public function getUserActivity(User $user): Collection
+    {
+        return Activity::where('user_id', $user->id)
+            ->orderBy('created_at', 'desc')
+            ->get();
+    }
+}
