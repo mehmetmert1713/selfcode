@@ -1,0 +1,16 @@
+github-repo/
+├── .github/
+│   └── workflows/                 # CI/CD yapılandırmaları
+│
+├── docs/
+│   ├── modules/                  # Modül dokümantasyonları
+│   ├── architecture/             # Mimari dokümantasyon
+│   └── development/             # Geliştirici rehberleri
+│
+├── examples/                     # Kod örnekleri
+│   ├── core/
+│   └── modules/
+│
+└── templates/                    # Şablonlar
+    ├── module-template/
+    └── documentation-template/
