@@ -1,0 +1,64 @@
+app/Core/EventBus/
+├── Services/
+│   ├── EventBusService.php
+│   │   Amaç: Event yönetim sistemi
+│   │   İçerik:
+│   │   ```php
+│   │   class EventBusService
+│   │   {
+│   │       // Event yayınlama
+│   │       public function publish(Event $event): void
+│   │       {
+│   │           // Event validasyonu
+│   │           $this->validateEvent($event);
+│   │           
+│   │           // Event dağıtımı
+│   │           $this->distribute($event);
+│   │           
+│   │           // Event loglama
+│   │           $this->logEvent($event);
+│   │       }
+│   │
+│   │       // Event dinleme
+│   │       public function subscribe(string $eventType, callable $handler): void
+│   │       {
+│   │           // Handler kaydı
+│   │           // Dinleyici yönetimi
+│   │           // Retry politikası
+│   │       }
+│   │   }
+│   │   ```
+│   │
+│   └── EventStoreService.php
+│       Amaç: Event depolama
+│       Özellikler:
+│       - Event persistance
+│       - Event replay
+│       - Event sourcing
+
+├── Handlers/
+│   ├── EventHandler.php
+│   │   Amaç: Event işleyici
+│   │   Özellikler:
+│   │   - Event işleme
+│   │   - Error handling
+│   │   - Retry mekanizması
+│   │
+│   └── Strategies/
+│       ├── AsyncHandler.php
+│       ├── SyncHandler.php
+│       └── QueueHandler.php
+
+└── Monitoring/
+    ├── EventMonitor.php
+    │   Amaç: Event izleme
+    │   Özellikler:
+    │   - Event tracking
+    │   - Performance monitoring
+    │   - Error tracking
+    │
+    └── Dashboard/
+        ├── EventDashboard.php
+        └── Metrics/
+            ├── EventMetrics.php
+            └── PerformanceMetrics.php
