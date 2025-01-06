@@ -1,0 +1,43 @@
+# [Modül/Özellik] Geliştirme Prompt'u
+
+## Bağlam
+Önceki Durum: [son geliştirme durumu]
+Hedef: [bu aşamada yapılacaklar]
+İlgili Dosyalar: [dosya referansları]
+
+## Gereksinimler
+- [gereksinim-1]
+- [gereksinim-2]
+- ...
+
+## Teknik Detaylar
+- Kullanılacak sınıflar
+- Metot imzaları
+- Veritabanı değişiklikleri
+
+## Beklenen Çıktı
+- Oluşturulacak dosyalar
+- Değiştirilecek dosyalar
+- Test senaryoları
+
+## Checkpoint Bilgisi
+ID: [checkpoint-id]
+Önceki Checkpoint: [referans]
+Sonraki Hedef: [hedef]
+
+. Geliştirme Kontrol Listesi
+Her Modül İçin:
+
+ Dokümentasyon hazırlığı
+ Veritabanı şeması
+ API planlaması
+ Test senaryoları
+ Core entegrasyon noktaları
+
+Her Geliştirme Seansı İçin:
+
+ Önceki checkpoint kontrolü
+ Prompt hazırlığı
+ Kod incelemesi
+ Test çalıştırma
+ Yeni checkpoint kaydı
