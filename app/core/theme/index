@@ -1,0 +1,80 @@
+app/Core/Theme/
+├── Managers/
+│   ├── ThemeManager.php
+│   │   Amaç: Tema yönetim sistemi
+│   │   İçerik:
+│   │   ```php 
+│   │   class ThemeManager
+│   │   {
+│   │       // Tema yükleme
+│   │       public function loadTheme(string $themeName): void
+│   │       {
+│   │           // Tema doğrulama
+│   │           // Tema dosyalarını yükleme
+│   │           // Yapılandırma
+│   │       }
+│   │
+│   │       // Tema değiştirme
+│   │       public function switchTheme(string $newTheme): bool
+│   │       {
+│   │           // Eski tema temizliği
+│   │           // Yeni tema aktivasyonu
+│   │           // Asset yönetimi
+│   │       }
+│   │
+│   │       // Tema özelleştirme
+│   │       public function customizeTheme(array $settings): void
+│   │       {
+│   │           // Renk şeması
+│   │           // Font ayarları
+│   │           // Layout yapılandırması
+│   │       }
+│   │   }
+│   │   ```
+│   │
+│   └── AssetManager.php
+│       Amaç: Tema varlıkları yönetimi
+│       Özellikler:
+│       - CSS/JS yönetimi
+│       - Resim optimizasyonu
+│       - Font yönetimi
+
+├── Customizer/
+│   ├── CustomizerManager.php
+│   │   Amaç: Tema özelleştirme yönetimi
+│   │   Metodlar:
+│   │   - addCustomizerPanel()
+│   │   - addCustomizerSection()
+│   │   - addCustomizerControl()
+│   │
+│   └── Controls/
+│       ├── ColorPicker.php
+│       ├── Typography.php
+│       └── LayoutControl.php
+
+└── Renderer/
+    ├── ThemeRenderer.php
+    │   Amaç: Tema render sistemi
+    │   İçerik:
+    │   ```php
+    │   class ThemeRenderer
+    │   {
+    │       // Sayfa render
+    │       public function render(string $view, array $data = []): string
+    │       {
+    │           // Template yükleme
+    │           // Değişken enjeksiyonu
+    │           // Cache yönetimi
+    │       }
+│
+    │       // Partial render
+    │       public function renderPartial(string $partial, array $data = []): string
+    │       {
+    │           // Parça template render
+    │       }
+    │   }
+    │   ```
+    │
+    └── TemplateEngine/
+        ├── BladeExtensions.php
+        └── ThemeDirectives.php
