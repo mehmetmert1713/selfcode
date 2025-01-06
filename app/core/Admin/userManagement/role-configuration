@@ -1,0 +1,27 @@
+// Rol yapılandırması
+return [
+    'roles' => [
+        'super_admin' => [
+            'label' => 'Super Administrator',
+            'permissions' => '*',
+            'level' => 100
+        ],
+        'admin' => [
+            'label' => 'Administrator',
+            'permissions' => [
+                'manage_users',
+                'manage_content',
+                'manage_settings'
+            ],
+            'level' => 80
+        ],
+        'editor' => [
+            'label' => 'Editor',
+            'permissions' => [
+                'manage_content',
+                'publish_content'
+            ],
+            'level' => 60
+        ]
+    ]
+];
