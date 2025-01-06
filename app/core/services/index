@@ -1,0 +1,31 @@
+app/Core/Services/
+├── Auth/
+│   ├── AuthService.php
+│   │   Amaç: Kimlik doğrulama servisi
+│   │   Metodlar:
+│   │   - authenticate()
+│   │   - validate()
+│   │   - checkPermissions()
+│   │
+│   └── PermissionService.php
+│       Amaç: Yetkilendirme servisi
+│       Metodlar:
+│       - checkAccess()
+│       - assignRole()
+│       - revokePermission()
+│
+├── Cache/
+│   └── CacheService.php
+│       Amaç: Önbellek yönetimi
+│       Metodlar:
+│       - get()
+│       - set()
+│       - forget()
+│
+└── Database/
+    └── QueryService.php
+        Amaç: Veritabanı sorgu optimizasyonu
+        Metodlar:
+        - optimize()
+        - buildQuery()
+        - executeQuery()
