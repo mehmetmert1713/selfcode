@@ -1,0 +1,13 @@
+app/Core/Engine/SiteTypeEngine/
+├── Adapters/
+│   ├── DatabaseAdapter.php    # Veritabanı adaptasyonu
+│   ├── ThemeAdapter.php      # Tema adaptasyonu
+│   └── MenuAdapter.php       # Menü adaptasyonu
+│
+├── Transformers/
+│   ├── ContentTransformer.php # İçerik dönüştürme
+│   └── SettingsTransformer.php # Ayar dönüştürme
+│
+└── Managers/
+    ├── SiteTypeManager.php    # Site tipi yönetimi
+    └── IntegrationManager.php # Entegrasyon yönetimi
