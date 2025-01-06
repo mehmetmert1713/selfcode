@@ -1,0 +1,22 @@
+## Code Review Checklist
+
+1. Architecture
+   - [ ] SOLID principles followed
+   - [ ] Design patterns properly implemented
+   - [ ] Dependency injection used correctly
+
+2. Security
+   - [ ] Input validation implemented
+   - [ ] SQL injection prevention
+   - [ ] XSS protection
+   - [ ] CSRF protection
+
+3. Performance
+   - [ ] Database queries optimized
+   - [ ] Caching implemented where needed
+   - [ ] Resource loading optimized
+
+4. Testing
+   - [ ] Unit tests written
+   - [ ] Feature tests implemented
+   - [ ] Edge cases covered
