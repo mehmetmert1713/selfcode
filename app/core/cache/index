@@ -1,0 +1,71 @@
+app/Core/Cache/
+├── Managers/
+│   ├── CacheManager.php
+│   │   Amaç: Önbellek yönetim sistemi
+│   │   İçerik:
+│   │   ```php
+│   │   class CacheManager
+│   │   {
+│   │       // Önbellek yapılandırması
+│   │       private array $config;
+│   │       private CacheDriver $driver;
+│   │
+│   │       // Önbelleğe alma
+│   │       public function remember(string $key, $value, $ttl = null): void
+│   │       {
+│   │           // Önbellek kontrolü
+│   │           // Değer saklama
+│   │           // TTL yönetimi
+│   │       }
+│   │
+│   │       // Önbellek temizleme
+│   │       public function flush(string $pattern = null): void
+│   │       {
+│   │           // Seçili veya tüm önbelleği temizle
+│   │       }
+│   │   }
+│   │   ```
+│   │
+│   └── TagManager.php
+│       Amaç: Önbellek etiket yönetimi
+│       Metodlar:
+│       - tagCache()
+│       - flushTag()
+│       - getTagged()
+
+├── Drivers/
+│   ├── RedisDriver.php
+│   │   Amaç: Redis önbellek sürücüsü
+│   │   Özellikler:
+│   │   - Redis bağlantı yönetimi
+│   │   - Atomik işlemler
+│   │   - Pipeline desteği
+│   │
+│   ├── MemcachedDriver.php
+│   │   Amaç: Memcached önbellek sürücüsü
+│   │   Özellikler:
+│   │   - Cluster desteği
+│   │   - Consistent hashing
+│   │   - Failover yönetimi
+│   │
+│   └── FileDriver.php
+│       Amaç: Dosya tabanlı önbellek
+│       Özellikler:
+│       - Dosya kilitleme
+│       - Otomatik temizleme
+│       - Dizin yönetimi
+
+└── Strategies/
+    ├── CacheStrategy.php
+    │   Amaç: Önbellek stratejisi arayüzü
+    │   Metodlar:
+    │   - shouldCache()
+    │   - getCacheKey()
+    │   - getCacheTTL()
+    │
+    └── CacheInvalidator.php
+        Amaç: Önbellek geçersizleştirme
+        Özellikler:
+        - Akıllı geçersizleştirme
+        - Bağımlılık takibi
+        - Kademeli temizleme
