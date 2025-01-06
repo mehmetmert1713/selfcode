@@ -1,0 +1,24 @@
+project-docs/
+├── architecture/
+│   ├── system-overview.md           # Sistem genel bakış
+│   ├── core-structure.md           # Core yapı detayları
+│   └── module-structure.md         # Modül yapısı
+│
+├── modules/
+│   ├── module-name/
+│   │   ├── requirements.md         # Gereksinimler
+│   │   ├── structure.md           # Dizin yapısı
+│   │   ├── database.md            # Veritabanı şeması
+│   │   └── api.md                 # API dokümantasyonu
+│   │
+│   └── [diğer-modüller]/
+│
+├── implementation/
+│   ├── coding-standards.md        # Kodlama standartları
+│   ├── testing-guide.md          # Test rehberi
+│   └── security-checklist.md     # Güvenlik kontrol listesi
+│
+└── development/
+    ├── getting-started.md        # Başlangıç rehberi
+    ├── module-development.md     # Modül geliştirme klavuzu
+    └── troubleshooting.md       # Sorun giderme
