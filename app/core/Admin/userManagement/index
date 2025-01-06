@@ -1,0 +1,130 @@
+app/Core/Admin/UserManagement/
+├── Services/
+│   ├── UserManager.php
+│   │   Amaç: Kullanıcı yönetim servisi
+│   │   İçerik:
+│   │   ```php
+│   │   class UserManager
+│   │   {
+│   │       // Kullanıcı oluşturma
+│   │       public function createUser(array $data): User
+│   │       {
+│   │           // Veri doğrulama
+│   │           // Şifre hashleme
+│   │           // Rol atama
+│   │           // Bildirim gönderme
+│   │       }
+│   │
+│   │       // Kullanıcı güncelleme
+│   │       public function updateUser(User $user, array $data): bool
+│   │       {
+│   │           // Değişiklik kontrolü
+│   │           // İzin kontrolü
+│   │           // Log kaydı
+│   │       }
+│   │
+│   │       // Kullanıcı silme
+│   │       public function deleteUser(User $user): bool
+│   │       {
+│   │           // Yetki kontrolü
+│   │           // İlişkili veri temizliği
+│   │           // Audit log
+│   │       }
+│   │   }
+│   │   ```
+│   │
+│   └── ProfileManager.php
+│       Amaç: Kullanıcı profil yönetimi
+│       Özellikler:
+│       - Profil güncelleme
+│       - Avatar yönetimi
+│       - Tercih ayarları
+
+├── Roles/
+│   ├── RoleManager.php
+│   │   Amaç: Rol yönetim sistemi
+│   │   İçerik:
+│   │   ```php
+│   │   class RoleManager
+│   │   {
+│   │       // Rol oluşturma
+│   │       public function createRole(string $name, array $permissions): Role
+│   │       {
+│   │           // Rol tanımlama
+│   │           // Yetki atama
+│   │           // Hiyerarşi kontrolü
+│   │       }
+│   │
+│   │       // Rol atama
+│   │       public function assignRole(User $user, Role $role): void
+│   │       {
+│   │           // Yetki kontrolü
+│   │           // Rol çakışma kontrolü
+│   │           // Event tetikleme
+│   │       }
+│   │   }
+│   │   ```
+│   │
+│   └── Hierarchy/
+│       ├── RoleHierarchy.php
+│       └── InheritanceManager.php
+
+├── Permissions/
+│   ├── PermissionManager.php
+│   │   Amaç: Yetki yönetim sistemi
+│   │   İçerik:
+│   │   ```php
+│   │   class PermissionManager
+│   │   {
+│   │       // Yetki tanımlama
+│   │       public function definePermission(string $key, array $rules): void
+│   │       {
+│   │           // Yetki kaydı
+│   │           // Kural tanımlama
+│   │           // Bağımlılık kontrolü
+│   │       }
+│   │
+│   │       // Yetki kontrolü
+│   │       public function checkPermission(User $user, string $permission): bool
+│   │       {
+│   │           // Rol kontrolü
+│   │           // Özel izin kontrolü
+│   │           // Cache kontrolü
+│   │       }
+│   │   }
+│   │   ```
+│   │
+│   └── Rules/
+│       ├── PermissionRule.php
+│       └── AccessRule.php
+
+├── Activity/
+│   ├── ActivityTracker.php
+│   │   Amaç: Kullanıcı aktivite takibi
+│   │   Özellikler:
+│   │   - İşlem logları
+│   │   - Oturum takibi
+│   │   - IP takibi
+│   │
+│   └── Monitors/
+│       ├── LoginMonitor.php
+│       ├── ActionMonitor.php
+│       └── SessionMonitor.php
+
+└── Notifications/
+    ├── UserNotificationManager.php
+    │   Amaç: Kullanıcı bildirim sistemi
+    │   Özellikler:
+    │   - Bildirim oluşturma
+    │   - Bildirim dağıtımı
+    │   - Bildirim tercihleri
+    │
+    └── Templates/
+        ├── EmailTemplates/
+        │   ├── WelcomeEmail.php
+        │   ├── PasswordReset.php
+        │   └── AccountNotification.php
+        │
+        └── PushTemplates/
+            ├── LoginAlert.php
+            └── SecurityAlert.php
