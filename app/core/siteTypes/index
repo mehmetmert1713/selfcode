@@ -1,0 +1,95 @@
+app/Core/SiteTypes/
+├── Base/
+│   ├── BaseSiteType.php
+│   │   Amaç: Temel site tipi sınıfı
+│   │   İçerik:
+│   │   ```php
+│   │   abstract class BaseSiteType
+│   │   {
+│   │       protected string $type;
+│   │       protected array $requiredModules;
+│   │
+│   │       // Site tipi başlatma
+│   │       public function initialize(): void
+│   │       {
+│   │           $this->loadRequiredModules();
+│   │           $this->configureSystem();
+│   │           $this->setupTheme();
+│   │       }
+│   │
+│   │       // Tema ayarları
+│   │       protected function setupTheme(): void
+│   │       {
+│   │           // Varsayılan tema
+│   │           // Tema ayarları
+│   │       }
+│   │   }
+│   │   ```
+│   │
+│   └── SiteTypeInterface.php
+│       Amaç: Site tipi kontratı
+│       Metodlar:
+│       - initialize()
+│       - getRequiredModules()
+│       - getDefaultTheme()
+
+├── Types/
+│   ├── BlogSite.php
+│   │   Amaç: Blog site tipi
+│   │   Özellikler:
+│   │   - Blog özellikleri
+│   │   - Yazı yönetimi
+│   │   - Kategori sistemi
+│   │
+│   ├── EcommerceSite.php
+│   │   Amaç: E-ticaret site tipi
+│   │   Özellikler:
+│   │   - Ürün yönetimi
+│   │   - Sepet sistemi
+│   │   - Ödeme sistemi
+│   │
+│   ├── NewsSite.php
+│   │   Amaç: Haber site tipi
+│   │   Özellikler:
+│   │   - Haber yönetimi
+│   │   - Kategori sistemi
+│   │   - Medya galerisi
+│   │
+│   └── CorporateSite.php
+│       Amaç: Kurumsal site tipi
+│       Özellikler:
+│       - Sayfa yönetimi
+│       - İletişim formları
+│       - Servis tanıtımları
+
+└── Manager/
+    ├── SiteTypeManager.php
+    │   Amaç: Site tipi yönetim sistemi
+    │   İçerik:
+    │   ```php
+    │   class SiteTypeManager
+    │   {
+    │       // Site tipi değiştirme
+    │       public function switchType(string $newType): void
+    │       {
+    │           // Tip değişim kontrolü
+    │           // Modül kontrolü
+    │           // Tema kontrolü
+    │           // Veri dönüşümü
+    │       }
+│
+    │       // Tip kontrolü
+    │       public function validateType(string $type): bool
+    │       {
+    │           // Tip doğrulama
+    │           // Gereksinim kontrolü
+    │       }
+    │   }
+    │   ```
+    │
+    └── ConversionManager.php
+        Amaç: Site tipi dönüşüm yönetimi
+        Özellikler:
+        - Veri dönüşümü
+        - İçerik taşıma
+        - Yapılandırma dönüşümü
