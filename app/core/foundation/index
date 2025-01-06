@@ -1,0 +1,21 @@
+app/Core/Foundation/
+├── Application.php
+│   Amaç: Ana uygulama sınıfı
+│   İçerik:
+│   - Temel uygulama yapısı
+│   - Servis container yönetimi
+│   - Olay yönetimi
+│
+├── Container.php
+│   Amaç: Dependency Injection container
+│   İçerik:
+│   - Servis container implementasyonu
+│   - Bağımlılık çözümleme
+│   - Singleton yönetimi
+│
+└── ServiceProvider.php
+    Amaç: Servis sağlayıcı temel sınıfı
+    İçerik:
+    - Servis kayıt metodları
+    - Boot metodları
+    - Config yükleme
