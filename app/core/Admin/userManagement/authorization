@@ -1,0 +1,29 @@
+// Yetki kontrolü örneği
+class PermissionChecker
+{
+    public function check(User $user, string $permission): bool
+    {
+        // Cache kontrolü
+        if ($this->cache->has("user_permissions_{$user->id}")) {
+            return $this->checkCache($user, $permission);
+        }
+
+        // Role bazlı kontrol
+        if ($this->checkRole($user, $permission)) {
+            return true;
+        }
+
+        // Özel izin kontrolü
+        return $this->checkSpecificPermission($user, $permission);
+    }
+
+    protected function checkRole(User $user, string $permission): bool
+    {
+        foreach ($user->roles as $role) {
+            if ($role->hasPermission($permission)) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
