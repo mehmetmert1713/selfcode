@@ -1,0 +1,18 @@
+// Dashboard widget örneği
+class StatisticsWidget extends BaseWidget
+{
+    public function render(): View
+    {
+        $stats = $this->gatherStatistics();
+        return view('admin.widgets.statistics', compact('stats'));
+    }
+
+    protected function gatherStatistics(): array
+    {
+        return [
+            'visitors' => $this->analyticsService->getVisitorCount(),
+            'content' => $this->contentService->getContentCount(),
+            'users' => $this->userService->getUserCount()
+        ];
+    }
+}
