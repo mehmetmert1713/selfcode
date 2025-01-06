@@ -1,0 +1,124 @@
+app/Core/Media/
+├── Processing/
+│   ├── VideoProcessor.php
+│   │   Amaç: Video işleme sistemi
+│   │   İçerik:
+│   │   ```php
+│   │   class VideoProcessor
+│   │   {
+│   │       // Video işleme
+│   │       public function process(Video $video, array $options = []): void
+│   │       {
+│   │           // Format dönüşümü
+│   │           $this->convert($video, $options['format'] ?? 'mp4');
+│   │           
+│   │           // Kalite ayarları
+│   │           $this->setQuality($video, $options['quality']);
+│   │           
+│   │           // Thumbnail oluşturma
+│   │           $this->generateThumbnails($video);
+│   │       }
+│   │
+│   │       // Stream hazırlama
+│   │       public function prepareForStreaming(Video $video): void
+│   │       {
+│   │           // HLS format
+│   │           // DASH format
+│   │           // Kalite seviyeleri
+│   │           // Segment oluşturma
+│   │       }
+│   │   }
+│   │   ```
+│   │
+│   ├── AudioProcessor.php
+│   │   Amaç: Ses işleme sistemi
+│   │   Özellikler:
+│   │   - Format dönüşümü
+│   │   - Bitrate ayarları
+│   │   - Metadata yönetimi
+│   │
+│   └── ImageProcessor.php
+│       Amaç: Görsel işleme
+│       Özellikler:
+│       - Boyut optimizasyonu
+│       - Format dönüşümü
+│       - Watermark ekleme
+
+├── Streaming/
+│   ├── StreamManager.php
+│   │   Amaç: Stream yönetim sistemi
+│   │   İçerik:
+│   │   ```php
+│   │   class StreamManager
+│   │   {
+│   │       // Stream başlatma
+│   │       public function startStream(Media $media): Stream
+│   │       {
+│   │           // Stream tipi belirleme
+│   │           $type = $this->determineStreamType($media);
+│   │           
+│   │           // Stream sunucusu seçimi
+│   │           $server = $this->selectOptimalServer();
+│   │           
+│   │           // Stream başlatma
+│   │           return $this->initializeStream($media, $type, $server);
+│   │       }
+│   │
+│   │       // Adaptif bitrate
+│   │       public function handleAdaptiveBitrate(Stream $stream): void
+│   │       {
+│   │           // Bağlantı hızı kontrolü
+│   │           // Kalite değiştirme
+│   │           // Buffer yönetimi
+│   │       }
+│   │   }
+│   │   ```
+│   │
+│   ├── Protocols/
+│   │   ├── HLSHandler.php
+│   │   ├── DASHHandler.php
+│   │   └── RTMPHandler.php
+│   │
+│   └── Servers/
+│       ├── StreamServer.php
+│       ├── LoadBalancer.php
+│       └── EdgeServer.php
+
+├── Storage/
+│   ├── StorageManager.php
+│   │   Amaç: Medya depolama yönetimi
+│   │   Özellikler:
+│   │   - CDN entegrasyonu
+│   │   - Dağıtık depolama
+│   │   - Cache yönetimi
+│   │
+│   └── Providers/
+│       ├── LocalStorage.php
+│       ├── S3Storage.php
+│       └── CloudStorage.php
+
+├── Playlist/
+│   ├── PlaylistManager.php
+│   │   Amaç: Playlist yönetimi
+│   │   Özellikler:
+│   │   - Playlist oluşturma
+│   │   - Sıralama
+│   │   - Önbellek
+│   │
+│   └── Handlers/
+│       ├── VideoPlaylist.php
+│       ├── AudioPlaylist.php
+│       └── LivePlaylist.php
+
+└── DRM/
+    ├── DRMManager.php
+    │   Amaç: Digital Rights Management
+    │   Özellikler:
+    │   - İçerik şifreleme
+    │   - Lisans yönetimi
+    │   - Erişim kontrolü
+    │
+    └── Providers/
+        ├── WidevineDRM.php
+        ├── FairPlayDRM.php
+        └── PlayReadyDRM.php
