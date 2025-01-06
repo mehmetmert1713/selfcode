@@ -1,0 +1,57 @@
+docs/
+├── Getting-Started/
+│   ├── installation.md
+│   ├── configuration.md
+│   ├── quick-start.md
+│   └── basic-usage.md
+│
+├── Architecture/
+│   ├── system-overview.md
+│   ├── core-components.md
+│   ├── module-system.md
+│   └── security.md
+│
+├── Features/
+│   ├── authentication.md
+│   ├── authorization.md
+│   ├── media-management.md
+│   ├── caching.md
+│   └── api.md
+│
+├── Modules/
+│   ├── creating-modules.md
+│   ├── module-structure.md
+│   ├── best-practices.md
+│   └── examples/
+│       ├── blog-module.md
+│       ├── ecommerce-module.md
+│       └── custom-module.md
+│
+├── Themes/
+│   ├── theme-development.md
+│   ├── theme-structure.md
+│   ├── customization.md
+│   └── examples/
+│       ├── basic-theme.md
+│       └── advanced-theme.md
+│
+├── API/
+│   ├── rest-api.md
+│   ├── graphql.md
+│   ├── authentication.md
+│   └── endpoints/
+│       ├── users.md
+│       ├── content.md
+│       └── media.md
+│
+├── Development/
+│   ├── coding-standards.md
+│   ├── testing.md
+│   ├── debugging.md
+│   └── deployment.md
+│
+└── References/
+    ├── configuration.md
+    ├── commands.md
+    ├── events.md
+    └── hooks.md
