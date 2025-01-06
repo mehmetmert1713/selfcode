@@ -1,0 +1,140 @@
+app/Core/Admin/SiteIntegration/
+├── Adapters/
+│   ├── SiteTypeAdapter.php
+│   │   Amaç: Site tipi adaptör sistemi
+│   │   İçerik:
+│   │   ```php
+│   │   class SiteTypeAdapter
+│   │   {
+│   │       // Panel adaptasyonu
+│   │       public function adaptAdminPanel(string $siteType): void
+│   │       {
+│   │           // Menü adaptasyonu
+│   │           $this->adaptMenu($siteType);
+│   │           
+│   │           // Dashboard adaptasyonu
+│   │           $this->adaptDashboard($siteType);
+│   │           
+│   │           // Modül entegrasyonu
+│   │           $this->integrateModules($siteType);
+│   │       }
+│   │
+│   │       // Modül entegrasyonu
+│   │       protected function integrateModules(string $siteType): void
+│   │       {
+│   │           // Gerekli modülleri yükle
+│   │           // Ayarları yapılandır
+│   │           // Menüleri oluştur
+│   │       }
+│   │   }
+│   │   ```
+│   │
+│   └── ModuleAdapter.php
+│       Amaç: Modül adaptör sistemi
+│       Özellikler:
+│       - Modül ayarları
+│       - Panel entegrasyonu
+│       - Menü entegrasyonu
+
+├── Builders/
+│   ├── AdminPanelBuilder.php
+│   │   Amaç: Dinamik panel oluşturucu
+│   │   İçerik:
+│   │   ```php
+│   │   class AdminPanelBuilder
+│   │   {
+│   │       // Panel yapılandırma
+│   │       public function build(string $siteType): void
+│   │       {
+│   │           // Tema yükleme
+│   │           $this->loadTheme($siteType);
+│   │           
+│   │           // Menü oluşturma
+│   │           $this->buildMenu($siteType);
+│   │           
+│   │           // Widget yerleşimi
+│   │           $this->setupWidgets($siteType);
+│   │       }
+│   │
+│   │       // Widget yerleşimi
+│   │       protected function setupWidgets(string $siteType): void
+│   │       {
+│   │           // Site tipine özel widget'lar
+│   │           // Yerleşim düzeni
+│   │           // Veri kaynakları
+│   │       }
+│   │   }
+│   │   ```
+│   │
+│   └── MenuBuilder.php
+│       Amaç: Dinamik menü oluşturucu
+│       Özellikler:
+│       - Menü yapısı
+│       - Alt menüler
+│       - Yetkilendirme
+
+├── Managers/
+│   ├── IntegrationManager.php
+│   │   Amaç: Entegrasyon yönetimi
+│   │   İçerik:
+│   │   ```php
+│   │   class IntegrationManager
+│   │   {
+│   │       // Entegrasyon başlatma
+│   │       public function initialize(string $siteType): void
+│   │       {
+│   │           // Site tipi kontrolü
+│   │           // Gereksinim kontrolü
+│   │           // Entegrasyon süreci
+│   │       }
+│   │
+│   │       // Modül entegrasyonu
+│   │       public function integrateModule(string $moduleName): void
+│   │       {
+│   │           // Modül uyumluluk kontrolü
+│   │           // Panel entegrasyonu
+│   │           // Veri senkronizasyonu
+│   │       }
+│   │   }
+│   │   ```
+│   │
+│   └── ConfigurationManager.php
+│       Amaç: Yapılandırma yönetimi
+│       Özellikler:
+│       - Site tipi ayarları
+│       - Modül ayarları
+│       - Panel ayarları
+
+├── Templates/
+│   ├── Panels/
+│   │   ├── BlogPanel/
+│   │   │   ├── dashboard.blade.php
+│   │   │   └── menu.php
+│   │   │
+│   │   ├── EcommercePanel/
+│   │   │   ├── dashboard.blade.php
+│   │   │   └── menu.php
+│   │   │
+│   │   └── NewsPanel/
+│   │       ├── dashboard.blade.php
+│   │       └── menu.php
+│   │
+│   └── Widgets/
+│       ├── BlogWidgets/
+│       ├── EcommerceWidgets/
+│       └── NewsWidgets/
+
+└── Services/
+    ├── DashboardService.php
+    │   Amaç: Dashboard servisi
+    │   Özellikler:
+    │   - Widget yönetimi
+    │   - Veri toplama
+    │   - İstatistikler
+    │
+    └── NavigationService.php
+        Amaç: Navigasyon servisi
+        Özellikler:
+        - Menü yönetimi
+        - Rota yönetimi
+        - Yetkilendirme
