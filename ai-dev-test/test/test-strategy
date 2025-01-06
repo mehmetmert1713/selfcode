@@ -1,0 +1,35 @@
+// 1. Unit Tests
+namespace Tests\Unit\Core;
+
+class ModuleManagerTest extends TestCase
+{
+    /** @test */
+    public function it_can_register_new_module()
+    {
+        // Test implementation
+    }
+}
+
+// 2. Feature Tests
+namespace Tests\Feature\Modules;
+
+class BlogModuleTest extends TestCase
+{
+    /** @test */
+    public function it_can_create_blog_post()
+    {
+        // Test implementation
+    }
+}
+
+// 3. Integration Tests
+namespace Tests\Integration;
+
+class ModuleIntegrationTest extends TestCase
+{
+    /** @test */
+    public function it_can_interact_with_other_modules()
+    {
+        // Test implementation
+    }
+}
