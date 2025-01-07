@@ -1,0 +1,212 @@
+Site tipi dökümantasyonunu ekliyorum:
+
+```markdown
+# Site Tipi Geliştirme Kılavuzu
+
+## 1. Site Tipi Temel Yapısı
+```php
+SiteTypes/
+├── Base/
+│   ├── BaseSiteType.php     # Temel site tipi sınıfı
+│   └── SiteTypeInterface.php # Site tipi kontratı
+│
+├── Types/
+│   ├── BlogType/
+│   ├── EcommerceType/
+│   └── CustomType/          # Yeni site tipi
+│
+└── Config/
+    └── site-types.php       # Site tipi konfigürasyonu
+```
+
+## 2. Yeni Site Tipi Oluşturma
+
+```php
+// CustomType.php
+class CustomType extends BaseSiteType
+{
+    protected $requiredModules = [
+        'module-1',
+        'module-2'
+    ];
+    
+    protected $optionalModules = [
+        'module-3'
+    ];
+
+    public function initialize(): void 
+    {
+        $this->setupDatabase();
+        $this->registerModules();
+        $this->configureTheme();
+    }
+}
+
+// site-types.php
+return [
+    'custom' => [
+        'class' => CustomType::class,
+        'name' => 'Custom Site',
+        'description' => 'Custom site type'
+    ]
+];
+```
+
+## 3. Tema Entegrasyonu
+```php
+class CustomTheme extends BaseTheme
+{
+    public function register(): void
+    {
+        $this->registerViews();
+        $this->registerAssets();
+        $this->registerComponents();
+    }
+
+    protected function getLayouts(): array
+    {
+        return [
+            'default' => 'layouts.master',
+            'homepage' => 'layouts.home'
+        ];
+    }
+}
+```
+
+## 4. Modül Yapılandırması
+```php
+// Modül Tanımlama
+public function registerModules(): void
+{
+    $this->modules->register([
+        'content' => [
+            'model' => CustomContent::class,
+            'views' => 'custom::content',
+            'menu' => [
+                'label' => 'Custom Content',
+                'icon' => 'custom-icon'
+            ]
+        ]
+    ]);
+}
+```
+
+## 5. Admin Panel Entegrasyonu
+```php
+// Admin Menü
+public function registerAdminMenu(): void
+{
+    $this->menu->add('custom', [
+        'label' => 'Custom',
+        'icon' => 'icon',
+        'route' => 'admin.custom.dashboard',
+        'items' => [
+            // Alt menüler
+        ]
+    ]);
+}
+
+// Dashboard Widget
+public function registerDashboardWidgets(): void
+{
+    $this->dashboard->addWidget('custom-stats', [
+        'view' => 'custom::widgets.stats',
+        'position' => 'main',
+        'data' => [
+            // Widget veri kaynakları
+        ]
+    ]);
+}
+```
+
+## 6. Örnek Site Tipi: Portfolio Site
+
+```php
+class PortfolioType extends BaseSiteType
+{
+    protected $requiredModules = [
+        'portfolio',
+        'gallery',
+        'contact'
+    ];
+
+    public function initialize(): void
+    {
+        // Veritabanı şeması
+        $this->createTables([
+            'projects',
+            'categories',
+            'testimonials'
+        ]);
+
+        // Menü yapısı
+        $this->setupMenus([
+            'main' => [
+                'Projects',
+                'Services',
+                'About',
+                'Contact'
+            ]
+        ]);
+
+        // İçerik tipleri
+        $this->registerContentTypes([
+            'project' => Project::class,
+            'service' => Service::class
+        ]);
+    }
+}
+```
+
+## 7. Site Tipi Geçişleri
+
+```php
+class SiteTypeConverter
+{
+    public function convert(string $from, string $to): void
+    {
+        // Veri migrasyonu
+        $this->migrateData($from, $to);
+        
+        // Tema dönüşümü
+        $this->convertTheme($from, $to);
+        
+        // Modül adaptasyonu
+        $this->adaptModules($from, $to);
+    }
+}
+```
+
+## 8. Örnek Komutlar
+
+```bash
+# Yeni site tipi oluşturma
+php artisan make:site-type Custom
+
+# Tema oluşturma 
+php artisan make:theme custom-theme --type=custom
+
+# Modül oluşturma
+php artisan make:module custom-module --site-type=custom
+```
+
+## 9. Site Tipi Kontrolü
+
+```php
+// Site tipi middleware
+class SiteTypeMiddleware
+{
+    public function handle($request, $next)
+    {
+        $siteType = config('site.type');
+        
+        if (!$this->isValidType($siteType)) {
+            throw new InvalidSiteTypeException();
+        }
+        
+        return $next($request);
+    }
+}
+```
+
+Devam edelim mi? Dashboard widgetları ve site tipi özel ayarlarını da ekleyebilirim.
